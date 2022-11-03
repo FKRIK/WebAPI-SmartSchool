@@ -15,9 +15,18 @@ namespace SmartSchoolWebAPI.Controllers
     {
         private readonly SmartContext _context;
 
-        public AlunoController(SmartContext context)
+        public readonly IRepository _repo;
+
+        public AlunoController(SmartContext context, IRepository repo)
         {
             _context = context;
+            _repo = repo;
+        }
+
+        [HttpGet("pegaResposta")]
+        public IActionResult pegaResposta()
+        {
+            return Ok(_repo.pegaResposta());
         }
 
 
