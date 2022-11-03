@@ -23,11 +23,11 @@ namespace SmartSchoolWebAPI.Controllers
             _repo = repo;
         }
 
-        [HttpGet("pegaResposta")]
-        public IActionResult pegaResposta()
-        {
-            return Ok(_repo.pegaResposta());
-        }
+        // [HttpGet("pegaResposta")]
+        // public IActionResult pegaResposta()
+        // {
+        //     return Ok(_repo.pegaResposta());
+        // }
 
 
         [HttpGet]
