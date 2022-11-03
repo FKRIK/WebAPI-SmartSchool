@@ -86,14 +86,14 @@ namespace SmartSchoolWebAPI.Controllers
             return Ok(aluno);
         }
 
-        //api/aluno
+        //api/aluno/1
         [HttpPut("{id}")]
         public IActionResult Put(int id, Aluno aluno)
         {
             return Ok(aluno);
         }
 
-        //api/aluno
+        //api/aluno/1
         [HttpPatch("{id}")]
         public IActionResult Patch(int id, Aluno aluno)
         {
