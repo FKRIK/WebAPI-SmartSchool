@@ -37,7 +37,7 @@ namespace SmartSchoolWebAPI.Controllers
         // }
 
         //---- Segunda forma de fazer requisição por id ---- Rota: api/aluno/byId?id=1
-         [HttpGet("byId")]
+        [HttpGet("byId")]
         public IActionResult GetById(int id)
         {
             var aluno = _context.Alunos.FirstOrDefault(a => a.Id == id);
@@ -96,7 +96,7 @@ namespace SmartSchoolWebAPI.Controllers
             return Ok(aluno);
         }
 
-        //api/aluno
+        //api/aluno/1
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
