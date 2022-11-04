@@ -15,9 +15,12 @@ namespace SmartSchoolWebAPI.Controllers
     {
         private readonly SmartContext _context;
 
-        public ProfessorController(SmartContext context)
+        private readonly IRepository _repo;
+
+        public ProfessorController(SmartContext context, IRepository repo)
         {
             _context = context;
+            _repo = repo;
         }
 
         [HttpGet]
@@ -50,9 +53,13 @@ namespace SmartSchoolWebAPI.Controllers
         [HttpPost]
         public IActionResult Post(Professor professor)
         {
-            _context.Add(professor);
-            _context.SaveChanges();
-            return Ok(professor);
+            _repo.Add(professor);
+           if (_repo.SaveChanges())
+           {
+                return Ok(professor);
+           }
+
+            return BadRequest("Professor não encontrado");
         }
 
         //api/professor/1
